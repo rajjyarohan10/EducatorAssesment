@@ -7,6 +7,9 @@ app = Flask(__app__)
 # Initialize OpenAI client with API key
 client = OpenAI(api_key=os.getenv("MY_OPEN_AI_KEY"))
 
+if not client.api_key:
+    raise ValueError("OpenAI API key is not set. Check Heroku Config Vars.")
+
 # Helper function to generate a lesson plan
 def generate_lesson_plan(prompt):
     try:
