@@ -15,24 +15,24 @@ def generate_lesson_plan(prompt):
     try:
         response = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
-            model="gpt-4o-mini",
+            model="gpt-3.5-turbo",
         )
         return response.choices[0].message['content']
     except Exception as e:
         print(f"Error generating lesson plan: {e}")
-        return "There was an issue generating the lesson plan."
+        return f"{e}"
 
 # Helper function to generate an assessment
 def generate_assessment(prompt):
     try:
         response = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
-            model="gpt-4o-mini",
+            model="gpt-3.5-turbo",
         )
         return response.choices[0].message['content']
     except Exception as e:
         print(f"Error generating assessment: {e}")
-        return "There was an issue generating the assessment."
+        return f"{e}"
 
 # Home route
 @app.route('/')
