@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from openai import OpenAI
 import os
 
-app = Flask(__app__)
+app = Flask(__name__)
 
 # Initialize OpenAI client with API key
 client = OpenAI(api_key=os.getenv("MY_OPEN_AI_KEY"))
