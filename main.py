@@ -12,7 +12,7 @@ def generate_lesson_plan(prompt):
     try:
         response = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
-            model="gpt-4",  # Use gpt-4 or gpt-3.5-turbo based on your API setup
+            model="gpt-4o-mini",
         )
         return response.choices[0].message['content']
     except Exception as e:
@@ -24,7 +24,7 @@ def generate_assessment(prompt):
     try:
         response = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
-            model="gpt-4",  # Use gpt-4 or gpt-3.5-turbo based on your API setup
+            model="gpt-4o-mini",
         )
         return response.choices[0].message['content']
     except Exception as e:
